@@ -2,10 +2,13 @@ package br.com.caelum.tarefas.modelo;
 
 import java.util.Calendar;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Tarefa {
 	private Long id;
 	private String descricao;
 	private boolean finalizado;
+	@DateTimeFormat (pattern="dd/mm/yyyy")
 	private Calendar dataFinalizacao;
 
 	public Long getId() {
@@ -36,6 +39,8 @@ public class Tarefa {
 		return dataFinalizacao;
 	}
 
+
+	
 	public void setDataFinalizacao(Calendar dataFinalizacao) {
 		this.dataFinalizacao = dataFinalizacao;
 	}
