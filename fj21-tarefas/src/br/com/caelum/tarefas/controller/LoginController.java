@@ -9,15 +9,16 @@ import br.com.caelum.tarefas.dao.JdbcUsuarioDao;
 import br.com.caelum.tarefas.modelo.Usuario;
 
 @Controller
-
 public class LoginController {
+	
 @RequestMapping("loginForm")
 public String loginForm(){
+	System.out.println("dldgsdlg");
 	return "formulario-login";
 }
 	
 //metodo efutua login	
-	@RequestMapping("efetuaLogin")
+@RequestMapping("efetuaLogin")
 public String efetuaLogin(Usuario usuario,HttpSession session){
 		if (new JdbcUsuarioDao().existeUsuario(usuario)){
 			session.setAttribute("usuarioLogado",usuario);
